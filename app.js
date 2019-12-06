@@ -28,11 +28,10 @@ fetch(url)
         span.innerHTML = `${employee.name.first} ${employee.name.last}`;
         append(li, img);
         append(li, span);
-        append(ul,li);
+        append(ul, li);
     })
 })
 
 .catch(function(error){
-
     console.log(JSON.stringify(error));
 })
