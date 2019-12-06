@@ -17,7 +17,7 @@ fetch(url)
 .then(function(data) {
     let employees = data.results;
 
-    return authors.map(function(employee) {
+    return employees.map(function(employee) {
 
         let li = createNode('li'),
         img = createNode('img')
