@@ -21,11 +21,13 @@ fetch(url)
 
         let li = createNode('li'),
         img = createNode('img'),
-        span = createNode('span'),
         name = createNode('div'),
         email = createNode('div'),
-        city = createNode('div');
+        city = createNode('div'),
+        containerInfo = createNode('div');
 
+        li.classList.add('employee-card');
+        containerInfo.classList.add('container-info');
         name.classList.add('name');
         email.classList.add('email');
         city.classList.add('city');
@@ -36,15 +38,27 @@ fetch(url)
         email.innerHTML = `${employee.email}`;
         city.innerHTML = `${employee.location.city}`;
 
-
         append(li, img);
-        append(li, name);
-        append(li, email);
-        append(li, city);
+        append(containerInfo, name);
+        append(containerInfo, email);
+        append(containerInfo, city);
+        append(li, containerInfo)
         append(ul, li);
-    })
+    });
 })
 
 .catch((error) => {
     console.log(JSON.stringify(error));
 })
+
+const lightBox = document.querySelector('.lightbox');
+const li = document.querySelector('.employee-card');
+
+lightBox.classList.add('hidden');
+
+    li.addEventListener('click', () => {
+        lightBox.classList.add('active');
+    })
+    
+
+
