@@ -79,17 +79,24 @@ img {
     cursor: pointer;
 }
 
-.lightbox {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    background-color: lightgray;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    width: 70%;
-    height: 400px;
-    max-width: 400px;
-}
+.modal {
+    width: 375px;
+    margin: 15% auto auto;
+    position: relative;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #778;
+    border-radius: 5px;
+    padding: 30px 20px;
+    }
+
+.modal-close {
+    position: absolute;
+    right: 15px;
+    top: 5px;
+    cursor: pointer;
+    }
+        
 
 .hidden {
     display: none;
@@ -99,15 +106,14 @@ img {
     display: block;
 }
 
-#overlay {
-    position: fixed;
+.overlay {
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, .5);
-    pointer-events: none;
-}
+    background: rgba(100, 100, 100, 0.4)
+    }
 
 @media (min-width: 768px) {
     .container-employees {
@@ -236,7 +242,7 @@ img {
     }
 
     .employee-card img {
-        width: 128px;
+        width: 300px;
     }
 
     .container-info {
