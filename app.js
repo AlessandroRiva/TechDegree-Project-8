@@ -82,7 +82,7 @@ const modalContainer = document.querySelector(".modal-content");
 const modalClose = document.querySelector(".modal-close");
 
 containerEmployees.addEventListener('click', e => {
-    const card = e.target.closest(".card");
+    const card = e.target.closest(".employee-card");
     const index = card.getAttribute('data-index');
     displayModal(index);
     });
