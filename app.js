@@ -1,3 +1,12 @@
+const containerEmployees = document.querySelector('.container-employees');
+let employees = [];
+const overlay = document.querySelector(".overlay");
+const modalContainer = document.querySelector(".modal-content");
+const modalClose = document.querySelector(".modal-close");
+const ul = document.getElementById('employees');
+const url = 'https://randomuser.me/api/?results=12';
+const li = document.querySelector('.employee-card');
+
 function createNode(element)
 {
     return document.createElement(element);
@@ -7,10 +16,6 @@ function append(parent, el)
 {
     return parent.appendChild(el);
 }
-
-const ul = document.getElementById('employees');
-
-const url = 'https://randomuser.me/api/?results=12';
 
 fetch(url)
 .then((resp) => resp.json())
@@ -51,8 +56,6 @@ fetch(url)
     console.log(JSON.stringify(error));
 })
 
-const li = document.querySelector('.employee-card');
-
 function displayModal(index) {
     // use object destructuring make our template literal cleaner
     let { name, dob, phone, email, location: { city, street, state, postcode
@@ -75,11 +78,6 @@ function displayModal(index) {
     modalContainer.innerHTML = modalHTML;
 }
 
-const containerEmployees = document.querySelector('.container-employees');
-let employees = [];
-const overlay = document.querySelector(".overlay");
-const modalContainer = document.querySelector(".modal-content");
-const modalClose = document.querySelector(".modal-close");
 
 containerEmployees.addEventListener('click', e => {
     const card = e.target.closest(".employee-card");
